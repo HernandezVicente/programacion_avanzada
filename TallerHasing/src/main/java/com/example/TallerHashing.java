@@ -130,6 +130,11 @@ public class TallerHashing {
             return max;
         }
 
+        // Getter para poder leer las colisiones desde la nueva clase de pruebas
+        public int getCollisions() {
+            return collisions;
+        }
+
         //Entrega tamaño, elementos, factor de carga, colisiones, buckets usados, tamaño máximo de bucket y tiempo de inserción.
         public void printReport(double elapsedSeconds) {
             System.out.println("strategy=" + hashStrategy
@@ -187,7 +192,7 @@ public class TallerHashing {
 
     //La clase principal
     public static void main(String[] args) {
-        int n = 1000;
+        int n = 10000;
         int tableSize = 211;
         runExperiment("random", generateRandomKeys(n, 8), tableSize);
         runExperiment("sequential", generateSequentialKeys(n), tableSize);
